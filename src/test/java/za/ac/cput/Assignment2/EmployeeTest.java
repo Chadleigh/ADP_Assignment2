@@ -9,6 +9,19 @@ class EmployeeTest {
 
     @Test
     void test(){
+
+        //add
+        Collection<String> employeeNames = new ArrayList<>();
+        employeeNames.add("Chad");
+        employeeNames.add("Shasta");
+        employeeNames.add("Layla");
+        employeeNames.add("David");
+        System.out.println(employeeNames);
+        //remove
+        employeeNames.removeIf(e -> e.startsWith("D"));
+        //find
+        Optional<String> firstElement = employeeNames.stream().findAny();
+
         //add
         List<String> employee = new ArrayList<>();
         employee.add("Chad");
@@ -36,10 +49,10 @@ class EmployeeTest {
 
         //add
         Map<String, Integer> employeeNum = new HashMap<>();
-        employeeNum.put("Shasta", 1);
+        employeeNum.put("Layla", 2);
         //remove
-        employeeNum.remove("Shasta");
+        employeeNum.remove("Layla");
         //find
-        employeeNum.get("Shasta");
+        employeeNum.get("Layla");
     }
 }
